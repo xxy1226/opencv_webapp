@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import pymysql
+pymysql.version_info = (1, 3, 13, "final", 0)
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!!3*tqw-_u40%cihapxzhj+-jf585a#yps#h6o9$#gzud27hd_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com'] # ***加入本地host
 
@@ -76,8 +79,12 @@ WSGI_APPLICATION = 'opencv.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'xxy1226$xxy1226',
+        'USER': 'xxy1226',
+        'PASSWORD': 'xxyamh01135',
+        'HOST': 'xxy1226.mysql.pythonanywhere-services.com',
+        'PORT': ''
     }
 }
 
@@ -123,4 +130,4 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_ROOT_URL = "."
+MEDIA_ROOT_URL = "/home/xxy1226/opencv_webapp/opencv_webapp"

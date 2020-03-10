@@ -1,3 +1,4 @@
+settings.py
 *.pyc
 *-
 __pycache__
@@ -5,4 +6,4 @@ myvenv
 db.sqlite3
 /static
 .DS.Store
-media/*
+/media/images
