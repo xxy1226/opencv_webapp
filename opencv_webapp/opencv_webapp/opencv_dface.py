@@ -17,7 +17,7 @@ def opencv_dface(path):
         if factor != 1:
             w = img.shape[1] * factor
             h = img.shape[0] * factor
-            img = ccv2.resize(img, (int(w), int(h)))
+            img = cv2.resize(img, (int(w), int(h)))
         
         baseUrl = settings.MEDIA_ROOT_URL + settings.MEDIA_URL
         face_cascade = cv2.CascadeClassifier(baseUrl + 'haarcascade_frontalface_default.xml')
