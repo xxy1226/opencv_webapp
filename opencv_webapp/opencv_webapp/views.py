@@ -32,6 +32,12 @@ def dface(request):
             post = form.save(commit=False)
             post.save()
             
+            # db.delete
+            if ImageUploadModel.objects.all().count() > 100:
+                obs = ImageUploadModel.objects.all().first()
+                if obs:
+                    obs.delete()
+            
             imageURL = settings.MEDIA_URL + form.instance.document.name
             opencv_dface(settings.MEDIA_ROOT_URL + imageURL)
             
