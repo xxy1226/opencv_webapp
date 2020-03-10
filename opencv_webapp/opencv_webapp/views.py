@@ -8,6 +8,7 @@ from django.core.files.storage import FileSystemStorage
 from .forms import ImageUploadForm
 from django.conf import settings
 from .opencv_dface import opencv_dface
+from .models import ImageUploadModel
 
 def first_view(request):
     return render(request, 'opencv_webapp/first_view.html', {})
